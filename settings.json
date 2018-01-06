@@ -1,0 +1,13 @@
+{
+  "public":
+  {
+    "stripe": "pk_test_azvANk7rAPMzhIJYyDOw5QO3",
+    "CLOUDINARY_API_KEY": "418661828837417",
+    "CLOUDINARY_CLOUD_NAME": "dlow"
+  },
+  "CLOUDINARY_API_SECRET": "_r_pq2suSLdYpa_gJEbUmHILKHo",
+  "private":
+  {
+    "stripe": "sk_test_8Ros5eoyPQVUmaI2TfGSjm9S"
+  }
+}

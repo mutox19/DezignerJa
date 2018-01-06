@@ -1,0 +1,18 @@
+<template name="profile">
+
+{{> navbar}}
+ <container>
+    <main>
+      <h2>User Settings</h2>
+      <p>
+        Here you can upload a profile picture, add a personal bio, website, company and much more.
+      </p>
+    {{> quickForm collection="Meteor.users" doc=currentUser id="updateUserForm" type="update" omitFields="createdAt, services, roles, profile.type, status"}}
+
+
+    <br><br><br><br><br>
+</main>
+</container>
+{{> footer}}
+
+</template>

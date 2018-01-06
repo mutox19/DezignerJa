@@ -1,0 +1,34 @@
+<template name="contact">
+  <body>
+    {{> navbar}}
+    {{sAlert}}
+    <container>
+      <main>
+        <h1 style="text-align:center; background-color:#F56EE3;">Contact Us</h1>
+        <hr>
+        <form class="form-inline" id="searchForm" role="form">
+                  <div class="form-group">
+
+                      <input type="text" class="form-control" name="firstN" placeholder="First Name" />
+                      <input type="text" class="form-control" name="lastN" placeholder="Last Name"/>
+                      <div class="input-group">
+                        <!--<span class="input-group-addon" id="basic-addon1">$</span> -->
+                        <input type="text" class="form-control" name="email" style="width:300px" placeholder="Email" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group">
+                        <!--<span class="input-group-addon" id="basic-addon1">$</span>-->
+                        <input type="text" class="form-control" name="subject" style="width:300px" placeholder="Subject" aria-describedby="basic-addon1">
+                      </div>
+                      <br><br>
+                      <textarea rows="4" cols="80" name="message" placeholder="Enter Message"></textarea>
+                      <br>
+                      <button type="submit" class="btn btn-success" name="submit">Submit</button><br><br>
+                  </div>
+          </form>
+          {{> carousel2}}
+      </main>
+    </container>
+    {{> footer}}
+  </body>
+
+</template>

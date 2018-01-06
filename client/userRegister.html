@@ -1,0 +1,71 @@
+<template name="userRegister">
+  <body>
+    {{> navbar}}
+    {{> sAlert}}
+    <container>
+      <main>
+        <div class="row">
+          <div class="text-center">
+            <h1 style="background-color:#F56EE3;">Register</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="username">Username:</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="firstName">First Name:</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="address">Address:</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your Home address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Email:</label>
+              <div class="col-sm-5">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pwd">Password:</label>
+              <div class="col-sm-5 text-center">
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="text-center">
+                <button type="submit" class="btn btn-success">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <h3 style="color:orange;">New Registraion</h3>
+        <p>By creating an account with our store, you will be able to move
+          through the checkout process faster, store multiple shipping
+          addresses, view and track your orders in your account and more</p>
+        </div>
+        </div>
+        <hr>
+      </main>
+    </container>
+    {{> footer}}
+  </body>
+</template>

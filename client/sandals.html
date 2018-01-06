@@ -1,0 +1,148 @@
+<template name="sandals">
+
+{{> navbar}}
+<container>
+    <main>
+
+      <hr style="color:black;">
+
+      <div class="row">
+
+        <!-- image 1-->
+
+        <div class="col-xs-2">
+
+          <section class="sky-form">
+         <div class="product_right">
+           <h2 class="m_2">Categories</h2>
+           <div class="tab1">
+             <ul class="place">
+               <li class="sort" style="font-size:18px;">Category</li>
+               <!--<li class="by"><img src="images/do.png" alt=""></li>-->
+                <div class="clearfix"> </div>
+              </ul>
+             <div class="single-bottom" style="display: none;">
+                <a href="#" id=heels><p>Heels</p></a>
+                <a href="#" id=sandalslink><p>Sandals</p></a>
+                <a href="#" id="slippers"><p>Slippers</p></a>
+                <a href="#" id="boots"><p>Boots</p></a>
+                <a href="#" id=all><p>View All</p></a>
+               </div>
+              </div>
+            <div class="tab2">
+             <ul class="place">
+               <li class="sort" style="font-size:18px;">Brand</li>
+               <!--<li class="by"><img src="images/do.png" alt=""></li>-->
+                <div class="clearfix"> </div>
+              </ul>
+             <div class="single-bottom" style="display: none;">
+                <a href="#"><p>D'nexstep</p></a>
+                <!--<a href="#"><p>sub category1</p></a>
+                <a href="#"><p>sub category1</p></a>
+                <a href="#"><p>sub category1</p></a>-->
+               </div>
+              </div>
+            <div class="tab3">
+             <ul class="place">
+               <li class="sort" style="font-size:18px;">Price</li>
+               <!--<li class="by"><img src="images/do.png" alt=""></li>-->
+                <div class="clearfix"> </div>
+              </ul>
+             <div class="single-bottom" style="display: none;">
+                <a href="#" id=under100><p>Under $100</p></a>
+                <a href="#" id=under300><p>Under $300</p></a>
+                <a href="#" id=under600><p>Under $600</p></a>
+                <a href="#" id=under1000><p>Under 1000</p></a>
+                <a href="#" id=all><p>View All</p></a>
+               </div>
+              </div>
+
+
+            <!--script-->
+          <script>
+            $(document).ready(function(){
+              $(".tab1 .single-bottom").hide();
+              $(".tab2 .single-bottom").hide();
+              $(".tab3 .single-bottom").hide();
+              $(".tab4 .single-bottom").hide();
+              $(".tab5 .single-bottom").hide();
+
+              $(".tab1 ul").click(function(){
+                $(".tab1 .single-bottom").slideToggle(300);
+                $(".tab2 .single-bottom").hide();
+                $(".tab3 .single-bottom").hide();
+                $(".tab4 .single-bottom").hide();
+                $(".tab5 .single-bottom").hide();
+              })
+              $(".tab2 ul").click(function(){
+                $(".tab2 .single-bottom").slideToggle(300);
+                $(".tab1 .single-bottom").hide();
+                $(".tab3 .single-bottom").hide();
+                $(".tab4 .single-bottom").hide();
+                $(".tab5 .single-bottom").hide();
+              })
+              $(".tab3 ul").click(function(){
+                $(".tab3 .single-bottom").slideToggle(300);
+                $(".tab4 .single-bottom").hide();
+                $(".tab5 .single-bottom").hide();
+                $(".tab2 .single-bottom").hide();
+                $(".tab1 .single-bottom").hide();
+              })
+              $(".tab4 ul").click(function(){
+                $(".tab4 .single-bottom").slideToggle(300);
+                $(".tab5 .single-bottom").hide();
+                $(".tab3 .single-bottom").hide();
+                $(".tab2 .single-bottom").hide();
+                $(".tab1 .single-bottom").hide();
+              })
+              $(".tab5 ul").click(function(){
+                $(".tab5 .single-bottom").slideToggle(300);
+                $(".tab4 .single-bottom").hide();
+                $(".tab3 .single-bottom").hide();
+                $(".tab2 .single-bottom").hide();
+                $(".tab1 .single-bottom").hide();
+              })
+            });
+          </script>
+          <!-- script -->
+
+
+       </div></section>
+        </div>
+
+        <div class="col-xs-10">
+          <div class="row animated fadeIn">
+<h1 style="text-align:center; background-color:#F56EE3;">Sandals</h1>
+      {{#each sandals}}
+      <div class="col-xs-3">
+	<div class="listingGet">
+    <div class="text-center hvr-glow listingCard" id="listingCard">
+      <a href="{{pathFor route='sandals'}}" >
+        <img src="{{image}}" alt="" style="max-width:100%; max-height:200px;"/>
+      </a>
+      <div class="card-header">
+          <h4>{{title}} <small>- {{brand}}{{category}}</small> {{price}}</h4>
+          {{#if currentUser}}
+          {{>CartAddItemButton price=this.price name=this.title _id=this._id}}
+          {{else}}
+          <button type="button" class="btn btn-success" style="background-color:pink; color:black;" name="submit">Sign in to purchase</button><br><br>
+          {{/if}}
+      </div>
+
+    </div>
+	</div>
+
+
+</div>
+      {{/each}}
+      </div>
+
+
+    </div>
+    </div>
+
+    </main>
+</container>
+{{> footer}}
+
+</template>

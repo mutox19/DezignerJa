@@ -1,0 +1,68 @@
+<template name="navbar">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    </head>
+  <div class="bs-component">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Dezign Chic JA<small style="font-size: 10px;">BETA</small></a>
+
+      </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about" class="profile">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                 <li><a href="/sandals" class="profile">Sandals</a></li>
+                 <li><a href="/clothes" class="profile">Clothes</a></li>
+                 <li><a href="/handbags" class="profile">Hand Bags</a></li>
+                 <li><a href="/jewelry" class="profile">Jewelry</a></li>
+            </ul>
+           </li>
+        {{#if isInRole 'admin'}}
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/admin">Admin Settings</a></li>
+            </ul>
+        </li>
+         {{/if}}
+           {{#if userLogged}}
+
+
+
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{currentUser.username}}<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="/profile">Profile</a></li>
+               </ul>
+           </li>
+           <li><a href="#" class="logout">Logout</a></li>
+          {{else}}
+          <li><a href="/login" class="profile">Login</a></li>
+          <li><a href="/register" class="profile">Register</a></li>
+          {{/if}}
+          <li><a href="/checkout" class="profile">Check Out</a></li>
+          <li><a href="/cart" class="profile">Cart</a></li>
+        <li><a href="{{pathFor route='contact'}}">Contact</a></li>
+     </ul>
+   </div>
+
+</div>
+
+</nav>
+</div>
+
+</template>

@@ -1,0 +1,111 @@
+<template name="recentProducts">
+
+<h1 style="text-align:center; background-color:#F56EE3;">Recent Products</h1>
+
+<div class="row">
+
+<div class="row animated fadeIn">
+{{#each recentHandbag}}
+<div class="col-xs-3">
+<div class="listingGet">
+<div class="text-center hvr-glow listingCard" id="listingCard">
+<a href="{{pathFor route='sandals'}}" >
+<img src="{{image}}" alt="" style="max-width:100%; max-height:200px;"/>
+</a>
+<div class="card-header">
+<h4>{{title}} <small>- {{brand}}{{category}}</small> {{price}}</h4>
+<!--{{#if currentUser}}
+{{>CartAddItemButton price=this.price name=this.title _id=this._id}}
+{{else}}
+<button type="button" class="btn btn-success" onClick="javascript:location.href = '/login';"  style="background-color:pink; color:black;" name="submit">Sign in to purchase</button><br><br>
+{{/if}}-->
+</div>
+
+</div>
+</div>
+
+
+</div>
+{{/each}}
+
+
+
+{{#each recentJewelry}}
+<div class="col-xs-3">
+<div class="listingGet">
+<div class="text-center hvr-glow listingCard" id="listingCard">
+<a href="{{pathFor route='sandals'}}" >
+<img src="{{image}}" alt="" style="max-width:100%; max-height:200px;"/>
+</a>
+<div class="card-header">
+<h4>{{title}} <small>- {{brand}}{{category}}</small> {{price}}</h4>
+<!--{{#if currentUser}}
+{{>CartAddItemButton price=this.price name=this.title _id=this._id}}
+{{else}}
+<button type="button" class="btn btn-success" onClick="javascript:location.href = '/login';"  style="background-color:pink; color:black;" name="submit">Sign in to purchase</button><br><br>
+{{/if}}-->
+</div>
+
+</div>
+</div>
+
+
+</div>
+{{/each}}
+
+
+
+{{#each recentClothes}}
+<div class="col-xs-3">
+<div class="listingGet">
+<div class="text-center hvr-glow listingCard" id="listingCard">
+<a href="{{pathFor route='sandals'}}" >
+<img src="{{image}}" alt="" style="max-width:100%; max-height:200px;"/>
+</a>
+<div class="card-header">
+<h4>{{title}} <small>- {{brand}}{{category}}</small> {{price}}</h4>
+<!--{{#if currentUser}}
+{{>CartAddItemButton price=this.price name=this.title _id=this._id}}
+{{else}}
+<button type="button" class="btn btn-success" onClick="javascript:location.href = '/login';"  style="background-color:pink; color:black;" name="submit">Sign in to purchase</button><br><br>
+{{/if}}-->
+</div>
+
+</div>
+</div>
+
+
+</div>
+{{/each}}
+
+
+{{#each recentSandals}}
+<div class="col-xs-3">
+<div class="listingGet">
+<div class="text-center hvr-glow listingCard" id="listingCard">
+<a href="{{pathFor route='sandals'}}" >
+<img src="{{image}}" alt="" style="max-width:100%; max-height:200px;"/>
+</a>
+<div class="card-header">
+<h4>{{title}} <small>- {{brand}}{{category}}</small> {{price}}</h4>
+<!--{{#if currentUser}}
+{{>CartAddItemButton price=this.price name=this.title _id=this._id}}
+{{else}}
+<button type="button" class="btn btn-success" onClick="javascript:location.href = '/login';"  style="background-color:pink; color:black;" name="submit">Sign in to purchase</button><br><br>
+{{/if}}-->
+</div>
+
+</div>
+</div>
+
+
+</div>
+{{/each}}
+
+
+
+</div>
+</div>
+
+
+</Template>

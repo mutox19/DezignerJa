@@ -1,0 +1,178 @@
+<template name="products">
+  {{> navbar}}
+  <container>
+      <main>
+{{#if currentUser}}
+<h1 style="text-align:center; background-color:#F56EE3;">Check Out</h1>
+<h3>
+{{> CartSummary}}
+
+</h3>
+<br><br>
+
+  <small>Use '4242 4242 4242 4242' for testing</small>
+
+  <br><br>
+
+  <hr>
+
+
+    <form class="form-horizontal" role="form">
+      {{#each userDetz}}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="username">Username:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="username" value="{{username}}" name="username" disabled="disabled" placeholder="Enter username">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="firstName">First Name:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="firstName" value="{{profile.firstName}}" name="firstName" disabled="disabled" placeholder="Enter your first name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="lastName" value="{{profile.lastName}}" name="lastName" disabled="disabled" placeholder="Enter your last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-5">
+          <input type="email" class="form-control" id="email" value="{{emails.[0].address}}" name="email" disabled="disabled" placeholder="Enter email address">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="lastName">Address:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="address" value="{{profile.address}}" name="address" disabled="disabled" placeholder="Enter your address">
+        </div>
+      </div>
+      {{/each}}
+      <div style="text-align:right; font-size:20px;">
+      {{>CartPayNow}}
+    </div>
+    </form>
+  <h3>If your information is incorrect please go to your user profile and edit your information</h3>
+  {{else}}
+  <h2>Log in to View this page</h2>
+	{{/if}}
+<!--
+	{{#each products}}
+		<div>
+			<h3>{{name}}</h3>
+			{{price}}
+			{{>CartAddItemButton}}
+		</div>
+	{{/each}} -->
+</main>
+</container>
+  {{> footer}}
+</template>
+
+
+<template name="CartSummary">
+	Number of Items in your cart {{itemCount}} items
+	<br>
+	Total price of all items ${{itemTotal}}
+	{{#if itemsInCart}}
+		<br>
+		<a href="{{pathFor 'cart'}}"> Click to View Cart</a>
+		<br>
+		<!--{{>CartPayNow}}-->
+	{{/if}}
+</template>
+
+<template name="CartAddItemButton">
+	<button class="add-item" style="background-color:#F56EE3; color:black;">Add To Cart</button>
+</template>
+
+<template name="CartPayNow">
+	<button id="pay-now" style="background-color:#F56EE3; color:black;">Pay Now</button>
+</template>
+
+<template name="CartItems">
+  {{> navbar}}
+  <container>
+      <main>
+{{#if currentUser}}
+<h1 style="text-align:center; background-color:#F56EE3;">Cart</h1>
+
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead style="background-color:#BEC1C2;">
+    <tr>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Remove from Cart</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each cartTable}}
+            <tr>
+            <td>
+                {{ name }}
+            </td>
+            <td>
+                {{ price }}
+            </td>
+
+            <td>
+                <a href="#" class="remove" id="remove">Remove</a>
+            </td>
+
+            </tr>
+            {{/each}}
+</tbody>
+
+
+
+</table>
+<div style="text-align:right;">
+{{#if hasItems}}
+
+
+  {{itemCount}} items
+  <br>
+  Total ${{itemTotal}}
+  <br>
+  {{>CartPayNow}}
+{{/if}}
+</div>
+{{else}}
+<h2>Log in to View this page</h2>
+{{/if}}
+
+</main>
+</container>
+{{> footer}}
+</template>
+
+<template name="CartItem">
+	<div>
+
+  <tr>
+    <td>
+		    {{name}}
+    </td>
+
+    <td>
+		    {{price}}
+    </td>
+
+      <td>
+        <a href="#" class="remove" id="remove">Remove</a>
+      </td>
+  </tr>
+		<!--<br>-->
+
+
+
+	</div>
+	<hr>
+	<br><br><br>
+</template>
